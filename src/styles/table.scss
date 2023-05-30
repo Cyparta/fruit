@@ -1,0 +1,73 @@
+.bluebuttom {
+  color: var(--main-color-blue) !important;
+}
+.redbuttom {
+  color: red !important;
+}
+.circuit {
+  border-radius: 50%;
+  display: inline-block;
+  // background-color: green;
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+}
+.red {
+  background-color: red;
+}
+.green {
+  background-color: green;
+}
+.yellow {
+  background-color: yellow;
+}
+.styleborder {
+  background-color: white;
+  box-shadow: 2px 2px 10px rgba(124, 141, 181, 0.12);
+  padding: 7px;
+  border-radius: 10px;
+}
+td {
+  font-size: 16px;
+}
+@media only screen and (max-width: 600px) {
+  .table {
+    overflow-x: scroll;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .styleinputtext {
+    left: 90%;
+  }
+
+  .styletocolumncustom {
+    margin-bottom: 20px;
+  }
+}
+@media screen and (max-width: 1440px) {
+  .left80 {
+    left: 85%;
+  }
+}
+@media screen and (min-width: 1000px) and (max-width: 1440px) {
+  .left80 {
+    left: 65%;
+  }
+}
+@media screen and (max-width: 995px) {
+  .left80 {
+    left: 90%;
+  }
+}
+.pagination {
+  span,
+  button {
+    color: black;
+  }
+  width: 20%;
+}
+@media screen and (max-width: 560px) {
+  .styletocolumncustom {
+    width: 100%;
+  }
+}

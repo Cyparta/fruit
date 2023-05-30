@@ -1,0 +1,13 @@
+.breadcrumbs {
+  a {
+    color: var(--gray-color);
+    text-decoration: none;
+    font-size: 1.5rem;
+  }
+  padding: 0;
+}
+.breadcrumbs {
+  a.active {
+    color: black;
+  }
+}

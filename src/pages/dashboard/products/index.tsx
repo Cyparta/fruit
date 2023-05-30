@@ -49,7 +49,7 @@ function Index() {
   return (
     <>
       <Seo pageTitle="Products" />
-      <div className="m-5">
+      <div className={width < 740 ? "m-1" : "m-5"}>
         <Breadcrumb data={data} mainnav="products" maintwo={"All Products"} />
         {width < 995 ? <Search width="w-100" /> : <Search width="w-40" />}
 

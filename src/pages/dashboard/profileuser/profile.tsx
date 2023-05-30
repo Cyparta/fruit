@@ -41,7 +41,7 @@ const Profile = () => {
   }, [width]);
   return (
     <div className="profile">
-      <div className="m-5">
+      <div className={width < 740 ? "m-1" : "m-5"}>
         <Seo pageTitle="profile" />
 
         <Breadcrumb data={data} mainnav="profileuser" maintwo="" />

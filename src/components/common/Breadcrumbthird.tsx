@@ -53,7 +53,9 @@ function Breadcrumbsthrid({ data, mainnav, maintwo }: breadcrumbsprops) {
         <Link
           onClick={onclickmainnav}
           href={`/dashboard/${mainnav}/${maintwo}`}
-        ></Link>
+        >
+          {` / ${maintwo}`}
+        </Link>
       ) : (
         <Link
           onClick={onclickmainnav}

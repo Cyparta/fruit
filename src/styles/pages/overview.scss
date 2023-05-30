@@ -52,7 +52,14 @@
   @extend .styleinputtext;
   left: 80%;
 }
-.tomenuicon {
+.tomenuicon,
+.tomenuicon:hover,
+.tomenuicon:focus,
+.btn-check:checked + .btn,
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check) + .btn:active {
   background-color: var(--color-main);
   padding: 5px;
   border-radius: 6px;
@@ -73,6 +80,9 @@
     flex: 0 0 auto;
     width: 22%;
   }
+  .stylerow {
+    padding: 10px 15px;
+  }
 }
 .styletonave {
   font-weight: 500;
@@ -89,4 +99,18 @@
 .styletosearch {
   border: 2px solid var(--gray-color-light);
   border-radius: 10px;
+}
+.stylerow {
+  .col-md-6.col-lg-3.col-sm-12:not(:last-child) {
+    @media screen and (max-width: 767px) {
+      border: 0;
+    }
+  }
+}
+.tomenuicon:hover {
+  background-color: var(--color-main);
+  padding: 5px;
+  border-radius: 6px;
+  color: white;
+  font-size: 25px;
 }

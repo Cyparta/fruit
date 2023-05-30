@@ -48,7 +48,7 @@ function Revenue() {
   return (
     <>
       <Seo pageTitle="analytics" />
-      <div className="m-5">
+      <div className={width < 740 ? "m-1" : "m-5"}>
         <Breadcrumb data={data} mainnav="Analytics" maintwo="" />
         {/* <Breadcrumbs data={data} mainnav={"analytics"} /> */}
         {width < 995 ? <Search width="w-100" /> : <Search width="w-40" />}

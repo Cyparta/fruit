@@ -65,7 +65,7 @@ function Index() {
     <div className="user">
       <Seo pageTitle="profileuser" />
       {/* ------ seatch -------*/}
-      <div className="m-5">
+      <div className={width < 740 ? "m-1" : "m-5"}>
         {/* <Breadcrumbs data={data} mainnav="users" /> */}
         <Breadcrumb data={data} mainnav="profileuser" maintwo="All Members" />
         <div className="d-flex align-items-center justify-content-between;">

@@ -130,7 +130,7 @@ function Index() {
   };
   return (
     <div className="marketing">
-      <div className="m-5">
+      <div className={width < 740 ? "m-1" : "m-5"}>
         <Seo pageTitle="marketing" />
         <Breadcrumb data={dataurl} mainnav="marketing" maintwo="Abs" />
         {width < 995 ? <Search width="w-100" /> : <Search width="w-40" />}

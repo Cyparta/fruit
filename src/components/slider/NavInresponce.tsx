@@ -16,7 +16,7 @@ function NavInresponce({ data, name }: Appearpartprops) {
     <>
       <div className="responcestyle">
         <span
-          className="colorblue mb-3"
+          className="colorblue mb-3 fs-5"
           id="dropdownMenuButton1"
           onClick={(e) => onclickofproduct(e)}
         >
@@ -36,8 +36,8 @@ function NavInresponce({ data, name }: Appearpartprops) {
                 href={item.href ? item.href : ""}
                 className={
                   index === 0
-                    ? "dropdown-item mb-3 active"
-                    : "dropdown-item mb-3"
+                    ? "dropdown-item mb-3 active fs-5"
+                    : "dropdown-item mb-3 fs-5"
                 }
                 // onClick={(e) => onclickmenu(item.href ? item.href : "", e)}
               >

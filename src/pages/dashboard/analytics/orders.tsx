@@ -49,7 +49,7 @@ function Orders() {
   return (
     <>
       <Seo pageTitle="analytics" />
-      <div className="m-5">
+      <div className={width < 740 ? "m-1" : "m-5"}>
         {/* <Breadcrumbs data={data} mainnav={"analytics"} /> */}
         <Breadcrumb data={data} mainnav="analytics" maintwo="" />
         {width < 995 ? <Search width="w-100" /> : <Search width="w-40" />}

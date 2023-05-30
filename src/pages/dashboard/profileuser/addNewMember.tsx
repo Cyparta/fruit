@@ -14,15 +14,13 @@ import Link from "next/link";
 import { HiArrowLeft } from "react-icons/hi";
 import Breadcrumbsthrid from "@/components/common/Breadcrumbthird";
 
-
-
 const AddNewMember = () => {
   let dispatch = useDispatch();
   useEffect(() => {
     dispatch(mainnav("profileuser"));
   }, []);
   let router = useRouter();
-  let url = router.route.slice(10).replace("/user", "");
+  let url = router.route.slice(10).replace("/profileuser", "");
   let dataurl = "";
   if (!url) {
     dataurl = "";
@@ -44,7 +42,7 @@ const AddNewMember = () => {
   }, [width]);
   return (
     <div className="profile">
-      <div className="m-5">
+      <div className={width < 740 ? "m-1" : "m-5"}>
         <Seo pageTitle="profile" />
 
         {/* ------ Bread Crumb -------*/}

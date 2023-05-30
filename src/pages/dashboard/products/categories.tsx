@@ -35,7 +35,7 @@ function Categories() {
   return (
     <>
       <Seo pageTitle="categories" />
-      <div className="m-5">
+      <div className={width < 740 ? "m-1" : "m-5"}>
         {/* <Breadcrumbs data={data} mainnav="products" /> */}
         <Breadcrumb data={data} mainnav="products" maintwo="" />
         {width < 995 ? (

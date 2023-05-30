@@ -35,7 +35,7 @@ function Addproduct() {
       <div className="add_product">
         <Seo pageTitle="add product" />
 
-        <div className="m-5">
+        <div className={width < 740 ? "m-1" : "m-5"}>
           {/* <Breadcrumbs data={data} /> */}
           {/* <Breadcrumbs data={data} mainnav="products" /> */}
           <Breadcrumb data={data} mainnav="products" maintwo="" />

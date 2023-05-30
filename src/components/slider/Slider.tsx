@@ -15,11 +15,12 @@ import {
 import NavInresponce from "./NavInresponce";
 import Search from "../common/Search";
 import { CgSearch } from "react-icons/cg";
+import { Button, Collapse } from "react-bootstrap";
 
 // import {styles} from "../../public/assets/scss/component/"
 function Slider({ children }: { children: React.ReactNode }) {
   const [width, setWidth] = useState<number>(1400);
-
+  const [open, setOpen] = useState(false);
   useEffect(() => {
     const handleResize = () => {
       setWidth(window.innerWidth);
@@ -36,17 +37,16 @@ function Slider({ children }: { children: React.ReactNode }) {
         <>
           <div className="row  justify-content-between align-items-center">
             <div className="col-md-3 col-sm-3 col-xs-button-9">
-              <button
-                className="navbar-toggler tomenuicon m-4"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarToggleExternalContent"
-                aria-controls="navbarToggleExternalContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
+              <Button
+                onClick={() => setOpen(!open)}
+                // className="navbar-toggler tomenuicon m-4"
+                // type="button"
+                className="tomenuicon"
+                aria-controls="example-collapse-text"
+                aria-expanded={open}
               >
                 <AiOutlineMenu />
-              </button>
+              </Button>
             </div>
             <div className="col-md-9 col-sm-9 col-xs-9">
               <div className="input-group  styletosearch">
@@ -66,40 +66,42 @@ function Slider({ children }: { children: React.ReactNode }) {
               </div>
             </div>
           </div>
-          <nav className="collapse m-4" id="navbarToggleExternalContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <Link
-                  className="nav-link active mb-3"
-                  aria-current="page"
-                  href="/"
-                >
-                  overview
-                </Link>
-              </li>
-              <li className="nav-item">
-                <NavInresponce data={productsNav} name="Products" />
-              </li>
-              <li className="nav-item">
-                <NavInresponce data={analyticsNav} name="Analytics" />
-              </li>
-              <li className="nav-item">
-                <NavInresponce data={MarketingNav} name="Marketing" />
-              </li>
-              <li className="nav-item">
-                <NavInresponce data={usersNav} name="profileuser" />
-              </li>
-              <li className="nav-item">
-                <Link
-                  className="nav-link active mb-3"
-                  aria-current="page"
-                  href="/dashboard/settings"
-                >
-                  settings
-                </Link>
-              </li>
-            </ul>
-          </nav>
+          <Collapse in={open} dimension="width">
+            <nav className=" m-4" id="example-collapse-text">
+              <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                <li className="nav-item">
+                  <Link
+                    className="nav-link active mb-3 fs-5"
+                    aria-current="page"
+                    href="/"
+                  >
+                    Overview
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <NavInresponce data={productsNav} name="Products" />
+                </li>
+                <li className="nav-item">
+                  <NavInresponce data={analyticsNav} name="Analytics" />
+                </li>
+                <li className="nav-item">
+                  <NavInresponce data={MarketingNav} name="Marketing" />
+                </li>
+                <li className="nav-item">
+                  <NavInresponce data={usersNav} name="profileuser" />
+                </li>
+                <li className="nav-item">
+                  <Link
+                    className="nav-link active mb-3 fs-5"
+                    aria-current="page"
+                    href="/dashboard/settings"
+                  >
+                    Settings
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+          </Collapse>
         </>
       ) : (
         <>

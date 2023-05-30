@@ -80,7 +80,7 @@ function Appearpart({ data, name }: Appearpartprops) {
         )}
         <div className="styletoselect">
           <span
-            className=""
+            className="fs-5"
             id="dropdownMenuButton1"
             onClick={(e) => onclickofproduct(e)}
           >
@@ -97,7 +97,7 @@ function Appearpart({ data, name }: Appearpartprops) {
       <ul id="displayTheProduct" className={click ? "appear" : "hidden"}>
         {data.map((item, index) => {
           return (
-            <li key={index} className={index === 0 ? "active" : ""}>
+            <li key={index} className={index === 0 ? "active fs-6" : "fs-6"}>
               <Link
                 href={item.href ? item.href : ""}
                 className={

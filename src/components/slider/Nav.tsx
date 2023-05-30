@@ -61,7 +61,7 @@ function Nav() {
               }
               id="overviewicon"
             />
-            <div className="ms-2">Overview</div>
+            <div className="ms-2 fs-5">Overview</div>
           </Link>
         </li>
         <li>
@@ -112,7 +112,7 @@ function Nav() {
               }
               id="settingsicon"
             />
-            <div className="ms-2">Settings</div>
+            <div className="ms-2 fs-5">Settings</div>
           </Link>
         </li>
       </ul>

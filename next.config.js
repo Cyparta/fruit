@@ -7,7 +7,7 @@ const nextConfig = {
   // target: "serverless",
   // serverless: true,
   // Specify which pages to export
-  output: "export",
+  // output: "export",
   // Set the output directory for the exported files
   // This isthe directory where the static HTML files will be generated
   // when you run the `npm run build && npm run export` command

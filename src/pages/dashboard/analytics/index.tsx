@@ -56,7 +56,7 @@ function Index() {
         <Breadcrumb data={data} mainnav="Analytics" maintwo="Products" />
         {width < 995 ? <Search width="w-100" /> : <Search width="w-40" />}
         {/* <Search width="w-45"/> */}
-        <Cards title="orders" />
+        <Cards title="analyics" />
         <div className="stylerow mt-5 row">
           <div className="col-12 col-md-6 col-lg-6">
             <h3 className="colorblue mb-5">All Products</h3>
@@ -79,7 +79,11 @@ function Index() {
             <span className="d-flex w-100 justify-content-evenly">
               {pageOptions.length > 0
                 ? pageOptions.map((ele: number, index: number) => (
-                    <div onClick={() => gotopage(ele)} key={index} style={{ cursor: "pointer" }}>
+                    <div
+                      onClick={() => gotopage(ele)}
+                      key={index}
+                      style={{ cursor: "pointer" }}
+                    >
                       {ele + 1}
                     </div>
                   ))

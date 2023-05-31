@@ -23,41 +23,49 @@ import Icontocard from "./Icontocard";
 import Icontoorders from "./Icontoorders";
 import Icontotax from "./Icontotax";
 import iconclick from "../../../public/assets/image/shapeclick.svg";
+import iconclickwhite from "../../../public/assets/image/shapeclickwhite.svg";
+
 import iconmenu from "../../../public/assets/image/Frame.svg";
+import iconmenuwhite from "../../../public/assets/image/Framewhitemoney.svg";
+
 import iconnote from "../../../public/assets/image/Framefruit.svg";
+import iconnotewhite from "../../../public/assets/image/Framewhitenote.svg";
 
 import Image from "next/image";
 function Cards({ title }: { title: string }) {
   let { name } = useSelector((state: any) => state.analytics);
   let [result, setresult] = useState([] as analyticsinterface[]);
   let [chartresult, setcharresult] = useState([] as any[]);
-
+  let [click, setclick] = useState(false);
   let [idele, setidele] = React.useState(0);
   function onclickofproduct(
     e: React.MouseEvent<HTMLDivElement, MouseEvent>,
     id: number
   ) {
-    (e.target as HTMLDivElement).classList.toggle("iconstylebackgroundgreen");
-    const iconstyleremovecolor = document.querySelectorAll(
-      ".iconstylebackgroundgreen"
-    );
-    console.log(e.target);
-
-    const items = document.getElementsByClassName("card");
-    for (let i = 0; i < items.length; i++) {
-      const item = items[i];
-      item.classList.remove("cardstyle");
+    if ((e.target as HTMLDivElement).querySelector("img")) {
+      (e.target as HTMLDivElement).classList.toggle("iconstylebackgroundgreen");
+      const iconstyleremovecolor = document.querySelectorAll(
+        "img.iconstylebackgroundgreen"
+      );
+      const items = document.getElementsByClassName("card");
+      for (let i = 0; i < items.length; i++) {
+        const item = items[i];
+        item.classList.remove("cardstyle");
+      }
+      for (let i = 0; i < iconstyleremovecolor.length; i++) {
+        const iconstyleremovecol = iconstyleremovecolor[i];
+        iconstyleremovecol.classList.remove("iconstylebackgroundgreen");
+      }
+      (e.target as HTMLDivElement).parentElement?.classList.toggle("cardstyle");
+      (e.target as HTMLDivElement)
+        .querySelector("img")
+        ?.classList.add("iconstylebackgroundgreen");
+      if (e.target) {
+        setidele(id);
+      } else {
+        setidele(idele);
+      }
     }
-    for (let i = 0; i < iconstyleremovecolor.length; i++) {
-      const iconstyleremovecol = iconstyleremovecolor[i];
-      iconstyleremovecol.classList.remove("iconstylebackgroundgreen");
-    }
-    (e.target as HTMLDivElement).parentElement?.classList.toggle("cardstyle");
-
-    (e.target as HTMLDivElement)
-      .querySelector("svg")
-      ?.classList.add("iconstylebackgroundgreen");
-    setidele(id);
   }
   useEffect(() => {
     if (name === "revenue") {
@@ -95,9 +103,12 @@ function Cards({ title }: { title: string }) {
                   : "col-sm-12 col-md-6 col-lg-4"
               }
               key={index}
-              onClick={(e) => onclickofproduct(e, ele.id)}
             >
-              <div className="card my-3" id="card">
+              <div
+                className="card my-3 "
+                id="card"
+                onClick={(e) => onclickofproduct(e, ele.id)}
+              >
                 <div className="card-body d-flex align-items-start justify-content-between">
                   <>
                     <div>
@@ -105,33 +116,35 @@ function Cards({ title }: { title: string }) {
                       <p className="card-text">{ele.title}</p>
                       <span className="colorgray">{ele.discount}</span>
                     </div>
-                    {name === "revenue" ? (
-                      <Icontocard ele={ele} />
-                    ) : name === "orders" ? (
-                      <Icontoorders ele={ele} />
-                    ) : name === "taxes" ? (
-                      <Icontotax ele={ele} />
-                    ) : ele.id === 1 ? (
-                      <Image
-                        src={iconclick}
-                        alt=""
-                        className="iconstyle fs-3 p-2"
-                      />
-                    ) : ele.id === 2 ? (
-                      <Image
-                        src={iconmenu}
-                        alt=""
-                        className="iconstyle fs-3 p-2"
-                      />
-                    ) : ele.id === 3 ? (
-                      <Image
-                        src={iconnote}
-                        alt=""
-                        className="iconstyle fs-3 p-2"
-                      />
-                    ) : (
-                      ""
-                    )}
+                    <span>
+                      {name === "revenue" ? (
+                        <Icontocard ele={ele} idele={idele} />
+                      ) : name === "orders" ? (
+                        <Icontoorders ele={ele} idele={idele} />
+                      ) : name === "taxes" ? (
+                        <Icontotax ele={ele} idele={idele} />
+                      ) : ele.id === 1 ? (
+                        <Image
+                          src={idele === 1 ? iconclickwhite : iconclick}
+                          alt=""
+                          className={"iconstyle fs-3 p-2"}
+                        />
+                      ) : ele.id === 2 ? (
+                        <Image
+                          src={idele === 2 ? iconmenuwhite : iconmenu}
+                          alt=""
+                          className={"iconstyle fs-3 p-2"}
+                        />
+                      ) : ele.id === 3 ? (
+                        <Image
+                          src={idele === 3 ? iconnotewhite : iconnote}
+                          alt=""
+                          className={"iconstyle fs-3 p-2"}
+                        />
+                      ) : (
+                        ""
+                      )}
+                    </span>
                   </>
                 </div>
               </div>

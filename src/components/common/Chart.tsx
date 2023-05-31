@@ -167,7 +167,7 @@ function Chart({ data, title }: chartprops) {
                 </div>
               </div>
             </div>
-            <div className="col-sm-12 col-md-6 col-lg-3 d-flex justify-content-end align-items-center order-2 mb-4">
+            <div className="col-sm-12 col-md-3 col-lg-3 d-flex justify-content-end align-items-center order-2 mb-4">
               <button
                 className="iconchartstyle btn  marginlefttobuttom"
                 id="line"

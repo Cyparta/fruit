@@ -17,43 +17,40 @@ import {
 } from "recharts";
 import { BsBarChartLine } from "react-icons/bs";
 import { BiLineChart } from "react-icons/bi";
+import Image from "next/image";
+// import line from "../../../public/assets/image/Line.svg";
+import columngreen from "../../../public/assets/image/FrameLinegreen.svg";
+
+import column from "../../../public/assets/image/column.svg";
+import lineblack from "../../../public/assets/image/FrameLineblack.svg";
+import line from "../../../public/assets/image/Line.svg";
+
 interface chartprops {
   data: datatype[];
   title: string;
 }
 function Chart({ data, title }: chartprops) {
   let [typeofchart, settypeofchart] = React.useState("bar");
-  let [click, setclick] = React.useState(false);
+  let [idele, setidele] = React.useState("line");
+  let [click, setclick] = React.useState(true);
+  // let arrayicon = [
+  //   { id: "line", data: [line, linegreen] },
+  //   { id: "bar", data: [bar, line] },
+  // ];
   function handleClick(
     event: string,
-    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+    e: React.MouseEvent<HTMLDivElement, MouseEvent>
   ) {
-    let element = e.target as HTMLButtonElement;
-    if (element) {
-      if (event === "line") {
-        settypeofchart("line");
-        element.classList.toggle("greenicon");
-        console.log();
-        document
-          .querySelectorAll("#bar")
-          ?.forEach((ele: { classList: { remove: (arg0: string) => any } }) =>
-            ele.classList.remove("greenicon")
-          );
-        document.getElementById("bar")?.classList.remove("greenicon");
-      } else {
-        settypeofchart("bar");
-        console.log(event);
-        element.classList.toggle("greenicon");
-        document
-          .querySelectorAll("#line")
-          ?.forEach((ele: { classList: { remove: (arg0: string) => any } }) =>
-            ele.classList.remove("greenicon")
-          );
-
-        document.getElementById("line")?.classList.remove("greenicon");
-      }
+    if (event === "line") {
+      setidele("line");
+      settypeofchart("line");
+    } else {
+      setidele("bar");
+      settypeofchart("bar");
     }
+    setclick(true);
   }
+
   const [width, setWidth] = useState<number>(1400);
 
   useEffect(() => {
@@ -110,20 +107,21 @@ function Chart({ data, title }: chartprops) {
               </div>
             </div>
             <div className="col-sm-12 col-md-3 col-lg-3 d-flex justify-content-end align-items-center order-1 mb-4">
-              <button
-                className="greenicon btn  marginlefttobuttom iconchartstyle"
+              <Image
+                src={idele === "line" && click ? line : lineblack}
                 id="line"
+                alt=""
                 onClick={(e) => handleClick("line", e)}
-              >
-                <BiLineChart />
-              </button>
-              <button
-                className="greenicon btn  ml-3 marginlefttobuttom iconchartstyle"
+                className="btn  ml-3 marginlefttobuttom iconchartstyle"
+              />
+
+              <Image
+                src={idele === "bar" && click ? columngreen : column}
                 id="bar"
+                alt=""
                 onClick={(e) => handleClick("bar", e)}
-              >
-                <BsBarChartLine />
-              </button>
+                className=" btn  marginlefttobuttom iconchartstyle"
+              />
             </div>
           </>
         ) : (
@@ -168,20 +166,21 @@ function Chart({ data, title }: chartprops) {
               </div>
             </div>
             <div className="col-sm-12 col-md-3 col-lg-3 d-flex justify-content-end align-items-center order-2 mb-4">
-              <button
-                className=" btn  marginlefttobuttom iconchartstyle"
+              <Image
+                src={idele === "line" && click ? line : lineblack}
                 id="line"
+                alt=""
                 onClick={(e) => handleClick("line", e)}
-              >
-                <BiLineChart />
-              </button>
-              <button
-                className=" btn  ml-3 marginlefttobuttom iconchartstyle"
+                className="btn  ml-3 marginlefttobuttom iconchartstyle"
+              />
+
+              <Image
+                src={idele === "bar" && click ? columngreen : column}
                 id="bar"
+                alt=""
                 onClick={(e) => handleClick("bar", e)}
-              >
-                <BsBarChartLine />
-              </button>
+                className=" btn  marginlefttobuttom iconchartstyle"
+              />
             </div>
           </>
         )}

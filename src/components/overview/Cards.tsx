@@ -16,7 +16,10 @@ function Cards() {
       <div className="row stylerow">
         {overviewNumber.map((ele, index) => {
           return (
-            <div className="col-md-6 col-lg-3 col-sm-12 my-3" key={index}>
+            <div
+              className="col-md-6 col-lg-3 col-sm-12 my-3 d-flex     justify-content-between"
+              key={index}
+            >
               <div className="card stylecard">
                 <div className="card-body d-flex align-items-start  justify-content-between">
                   <>
@@ -27,37 +30,28 @@ function Cards() {
                         {ele.discount}
                       </span>
                     </div>
-                    {ele.id === 1 ? (
-                      <Image
-                        src={iconshop}
-                        alt=""
-                        className="iconstyle fs-3 p-2"
-                      />
-                    ) : ele.id === 2 ? (
-                      <Image
-                        src={iconbag}
-                        alt=""
-                        className="iconstyle fs-3 p-2"
-                      />
-                    ) : // <BsFillHandbagFill className="iconstyle fs-3 p-2" />
-                    ele.id === 3 ? (
-                      <Image
-                        src={iconclick}
-                        alt=""
-                        className="iconstyle fs-3 p-2"
-                      />
-                    ) : ele.id === 4 ? (
-                      <Image
-                        src={iconuser}
-                        alt=""
-                        className="iconstyle fs-3 p-2"
-                      />
-                    ) : (
-                      ""
-                    )}
+
                     {/* <MdLocalGroceryStore className="iconstyle fs-1" /> */}
                   </>
                 </div>
+              </div>
+              <div className="p-3">
+                {ele.id === 1 ? (
+                  <Image src={iconshop} alt="" className="iconstyle fs-3 p-2" />
+                ) : ele.id === 2 ? (
+                  <Image src={iconbag} alt="" className="iconstyle fs-3 p-2" />
+                ) : // <BsFillHandbagFill className="iconstyle fs-3 p-2" />
+                ele.id === 3 ? (
+                  <Image
+                    src={iconclick}
+                    alt=""
+                    className="iconstyle fs-3 p-2"
+                  />
+                ) : ele.id === 4 ? (
+                  <Image src={iconuser} alt="" className="iconstyle fs-3 p-2" />
+                ) : (
+                  ""
+                )}
               </div>
             </div>
           );

@@ -154,8 +154,9 @@ function Index() {
                 <div className="col-md-3 styleimageads" key={index}>
                   <NextImage
                     src={ele as any}
-                    width={200}
-                    height={200}
+                    // width={200}
+                    // height={200}
+                    style={{ width: "100%", height: "100%" }}
                     alt="markting"
                   />
                   <p
@@ -175,8 +176,9 @@ function Index() {
             <div className="col-md-3 styleimageads">
               <NextImage
                 src={markting2}
-                width={200}
-                height={200}
+                // width={200}
+                // height={200}
+                style={{ width: "100%", height: "100%" }}
                 alt="markting"
               />
               <p className="text-center cursor-pointer delete-ad">Delete Ad</p>
@@ -207,7 +209,10 @@ function Index() {
               >
                 {"<"}
               </button>{" "}
-              <span className="d-flex w-100 justify-content-evenly" style={{ cursor: "pointer" }}>
+              <span
+                className="d-flex w-100 justify-content-evenly"
+                style={{ cursor: "pointer" }}
+              >
                 {pageOptions.length > 0
                   ? pageOptions.map((ele: number, index: number) => (
                       <div onClick={() => gotopage(ele)} key={index}>
@@ -302,10 +307,8 @@ function Index() {
                     <label htmlFor="image">
                       <NextImage
                         src={imageref}
-                        width={305}
-                        height={287}
                         alt=""
-                        // style={{ width: "20%", height: "20%" }}
+                        style={{ width: "100%", height: "100%" }}
                       />
                     </label>
                     <input
@@ -386,9 +389,9 @@ function Index() {
                     <label htmlFor="image">
                       <NextImage
                         src={imageref}
-                        // style={{ width: "20%", height: "20%" }}
-                        width={305}
-                        height={287}
+                        style={{ width: "100%", height: "100%" }}
+                        // width={305}
+                        // height={287}
                         alt=""
                       />
                     </label>

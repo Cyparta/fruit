@@ -36,7 +36,7 @@ function Slider({ children }: { children: React.ReactNode }) {
       {width <= 895 ? (
         <>
           <div className="row  justify-content-between align-items-center">
-            <div className="col-md-3 col-sm-3 col-xs-button-9">
+            <div className="col-md-1 col-sm-1 col-xs-button-9">
               <Button
                 onClick={() => setOpen(!open)}
                 // className="navbar-toggler tomenuicon m-4"
@@ -48,7 +48,7 @@ function Slider({ children }: { children: React.ReactNode }) {
                 <AiOutlineMenu />
               </Button>
             </div>
-            <div className="col-md-9 col-sm-9 col-xs-9">
+            <div className="col-md-11 col-sm-11 col-xs-9">
               <div className="input-group  styletosearch">
                 <input
                   type="text"

@@ -81,7 +81,7 @@ function Cards({ title }: { title: string }) {
   }, [result, name]);
   return (
     <>
-      <div className="row">
+      <div className="row stylecolumn">
         {result.map((ele, index) => {
           return (
             <div

@@ -12,12 +12,12 @@ import { useRouter } from "next/router";
 interface Appearpartprops {
   data: objectproductitem[];
   name: string;
+  tolink?: string;
 }
-function Appearpart({ data, name }: Appearpartprops) {
+function Appearpart({ data, name, tolink }: Appearpartprops) {
   let router = useRouter();
   let [click, setclick] = React.useState(false);
   function onclickofproduct(e: React.MouseEvent<any>) {
-    setclick(!click);
     (e.target as HTMLButtonElement).style.color = "";
     Array.from(document.getElementsByClassName("stylecolorblue")).map((ele) => {
       ele.classList.remove("stylecolorblue");
@@ -79,13 +79,19 @@ function Appearpart({ data, name }: Appearpartprops) {
           ""
         )}
         <div className="styletoselect">
-          <span
-            className="fs-5"
-            id="dropdownMenuButton1"
-            onClick={(e) => onclickofproduct(e)}
+          <Link
+            // onClick={() => onclickbuttom("/dashboard/products")
+            href={`/dashboard/${tolink}`}
+            className="w-100 styletonave"
           >
-            {name}
-          </span>
+            <span
+              className="fs-5"
+              id="dropdownMenuButton1"
+              onClick={(e) => onclickofproduct(e)}
+            >
+              {name}
+            </span>
+          </Link>
           {click ? (
             <IoIosArrowDown className="ai" onClick={() => setclick(!click)} />
           ) : (

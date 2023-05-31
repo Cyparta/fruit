@@ -111,14 +111,14 @@ function Chart({ data, title }: chartprops) {
             </div>
             <div className="col-sm-12 col-md-3 col-lg-3 d-flex justify-content-end align-items-center order-1 mb-4">
               <button
-                className="iconchartstyle btn  marginlefttobuttom"
+                className="greenicon btn  marginlefttobuttom iconchartstyle"
                 id="line"
                 onClick={(e) => handleClick("line", e)}
               >
                 <BiLineChart />
               </button>
               <button
-                className="iconchartstyle btn  ml-3 marginlefttobuttom greenicon"
+                className="greenicon btn  ml-3 marginlefttobuttom iconchartstyle"
                 id="bar"
                 onClick={(e) => handleClick("bar", e)}
               >
@@ -169,14 +169,14 @@ function Chart({ data, title }: chartprops) {
             </div>
             <div className="col-sm-12 col-md-3 col-lg-3 d-flex justify-content-end align-items-center order-2 mb-4">
               <button
-                className="iconchartstyle btn  marginlefttobuttom"
+                className=" btn  marginlefttobuttom iconchartstyle"
                 id="line"
                 onClick={(e) => handleClick("line", e)}
               >
                 <BiLineChart />
               </button>
               <button
-                className="iconchartstyle btn  ml-3 marginlefttobuttom greenicon"
+                className=" btn  ml-3 marginlefttobuttom iconchartstyle"
                 id="bar"
                 onClick={(e) => handleClick("bar", e)}
               >
